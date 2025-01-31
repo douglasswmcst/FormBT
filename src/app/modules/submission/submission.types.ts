@@ -70,7 +70,10 @@ export type ProcessedChildrenResponse = ChildBirthRecordsResponse &
     childSubFieldsArray?: MyInfoChildAttributes[]
     childIdx?: number
   }
-export type ProcessedAddressResponse = AddressResponse & ProcessedResponse
+export type ProcessedAddressResponse = AddressResponse &
+  ProcessedResponse & {
+    attributes: string[]
+  }
 /**
  * Can be either email or storage mode attachment response.
  * Email mode attachment response in the server will have extra metadata injected

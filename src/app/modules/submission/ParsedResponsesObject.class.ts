@@ -1,6 +1,7 @@
 import { err, ok, Result } from 'neverthrow'
 
 import {
+  BasicField,
   ChildrenCompoundFieldBase,
   FormAuthType,
   MyInfoAttribute,
@@ -23,6 +24,7 @@ import {
   ValidateFieldError,
 } from './submission.errors'
 import {
+  ProcessedAddressResponse,
   ProcessedChildrenResponse,
   ProcessedFieldResponse,
 } from './submission.types'
@@ -168,6 +170,11 @@ export default class ParsedResponsesObject {
           // to account for the case where the MyInfo child field contains more than 1 child
           childIdx += noOfChildrenInQn
         }
+      }
+
+      if (formField.fieldType === BasicField.Address) {
+        ;(processingResponse as ProcessedAddressResponse).attributes =
+          formField.attributes
       }
 
       // Error will be returned if the processed response is not valid.

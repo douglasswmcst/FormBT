@@ -449,33 +449,33 @@ export const generateTableDropdownColumn = (
   } as Column
 }
 
-export const generateAddressResponse = (
-  field: IAddressCompoundFieldSchema,
-  answerArray?: string[],
-): AddressResponse => ({
-  question: 'question',
-  _id: field._id,
-  answerArray: answerArray ?? [], //TODO: check
-  fieldType: BasicField.Address,
-})
+// export const generateAddressResponse = (
+//   field: IAddressCompoundFieldSchema,
+//   answerArray?: string[],
+// ): AddressResponse => ({
+//   question: 'question',
+//   _id: field._id,
+//   answerArray: answerArray ?? [], //TODO: check
+//   fieldType: BasicField.Address,
+// })
 
-export const generateNewAddressResponse = (
-  customParams?: Partial<ProcessedAddressResponse>,
-): ProcessedAddressResponse => ({
-  _id: new ObjectId().toHexString(),
-  question: `Address question`,
-  answerArray: [
-    'blockNumber_161',
-    'streetName_BUKIT BATOK STREET 11',
-    'buildingName_',
-    'levelNumber_',
-    'unitNumber_',
-    'postalCode_650161',
-  ],
-  fieldType: BasicField.Address,
-  isVisible: true,
-  ...customParams,
-})
+// export const generateNewAddressResponse = (
+//   customParams?: Partial<ProcessedAddressResponse>,
+// ): ProcessedAddressResponse => ({
+//   _id: new ObjectId().toHexString(),
+//   question: `Address question`,
+//   answerArray: [
+//     'blockNumber_161',
+//     'streetName_BUKIT BATOK STREET 11',
+//     'buildingName_',
+//     'levelNumber_',
+//     'unitNumber_',
+//     'postalCode_650161',
+//   ],
+//   fieldType: BasicField.Address,
+//   isVisible: true,
+//   ...customParams,
+// })
 
 export const generateTableShortTextColumn = (
   customParams?: Partial<ShortTextFieldBase> & { _id?: string },

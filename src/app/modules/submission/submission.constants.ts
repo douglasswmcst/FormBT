@@ -19,6 +19,7 @@ export const sharedSubmissionParams = {
           isHeader: Joi.boolean(),
           myInfo: Joi.object(),
           signature: Joi.string().allow(''),
+          attributes: Joi.array().optional(),
         })
         .xor('answer', 'answerArray') // only answer or answerArray can be present at once
         .with('filename', 'content'), // if filename is present, content must be present

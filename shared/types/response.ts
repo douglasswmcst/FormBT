@@ -15,6 +15,9 @@ const MyInfoResponseBase = z.object({
     })
     .optional(),
 })
+const CompoundResponseBase = z.object({
+  attributes: z.array(z.string()).optional(),
+})
 
 const VerifiableResponseBase = z.object({
   signature: z.string().optional(),
@@ -132,10 +135,10 @@ export const UenResponse = SingleAnswerResponse.extend({
 })
 export type UenResponse = z.infer<typeof UenResponse>
 
-export const AddressResponse = ResponseBase.extend({
+export const AddressResponse = ResponseBase.merge(CompoundResponseBase).extend({
   fieldType: z.literal(BasicField.Address),
   answerArray: z.array(z.string()) as unknown as z.Schema<string[]>,
-  // attributes: z.array(z.string()) as unknown as z.Schema<string[]>, // TODO: pass in addressAttributes as additional info
+  attributes: z.array(z.string()) as unknown as z.Schema<string[]>, // TODO: pass in addressAttributes as additional info
 })
 export type AddressResponse = z.infer<typeof AddressResponse>
 

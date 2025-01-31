@@ -6,4 +6,5 @@ export interface IAddressCompoundFieldSchema
   extends AddressCompoundFieldBase,
     IFieldSchema {
   fieldType: BasicField.Address
+  attributes: string[]
 }

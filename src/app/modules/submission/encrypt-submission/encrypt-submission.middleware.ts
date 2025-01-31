@@ -436,6 +436,7 @@ export const validateStorageSubmission = async (
         hashedFields,
       )
       req.body.responses = storageFormData
+
       return next()
     })
     .mapErr((error) => {

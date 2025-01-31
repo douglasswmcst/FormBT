@@ -296,6 +296,7 @@ export const submitStorageModeForm = async ({
   )
   console.log(formFields)
   console.log(formInputs)
+  console.log(formData.get('body'))
   return ApiService.post<SubmissionResponseDto>(
     `${PUBLIC_FORMS_ENDPOINT}/${formId}/submissions/storage`,
     formData,
