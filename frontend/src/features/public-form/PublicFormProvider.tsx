@@ -918,6 +918,7 @@ export const PublicFormProvider = ({
       formId,
       storePaymentMemory,
       clearRespondentAccessErrors,
+      selectedLanguage,
     ],
   )
 

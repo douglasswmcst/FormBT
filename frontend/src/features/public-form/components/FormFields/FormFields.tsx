@@ -31,6 +31,7 @@ import { useFetchPrefillQuery } from '~features/public-form/hooks/useFetchPrefil
 import { usePublicFormContext } from '~features/public-form/PublicFormContext'
 
 import { PaymentPreview } from '../../../../templates/Field/PaymentPreview/PaymentPreview'
+import { FormSaveDraftModal } from '../FloatingToolBar/FormSaveDraftModal'
 import { PublicFormPaymentResumeModal } from '../FormPaymentPage/FormPaymentResumeModal'
 
 import { PublicFormSubmitButton } from './PublicFormSubmitButton'
@@ -44,6 +45,10 @@ export interface FormFieldsProps {
   workflowStep?: FormWorkflowStepDto
   colorTheme: FormColorTheme
   onSubmit: SubmitHandler<FormFieldValues> | undefined
+  draftValues: FormFieldValues | undefined
+  isSaveDraftOpen?: boolean
+  onCloseSaveDraft?: () => void
+  onSaveDraft?: (values: FormFieldValues) => void
 }
 
 export type PrefillMap = {
@@ -61,6 +66,10 @@ export const FormFields = ({
   workflowStep,
   colorTheme,
   onSubmit,
+  draftValues,
+  isSaveDraftOpen,
+  onCloseSaveDraft,
+  onSaveDraft,
 }: FormFieldsProps): JSX.Element => {
   useFetchPrefillQuery()
   const [searchParams] = useSearchParams()
@@ -165,7 +174,7 @@ export const FormFields = ({
   }
 
   const formMethods = useForm<FormFieldValues>({
-    defaultValues: defaultFormValues,
+    defaultValues: { ...defaultFormValues, ...draftValues },
     mode: 'onTouched',
   })
 
@@ -196,6 +205,15 @@ export const FormFields = ({
 
   return (
     <FormProvider {...formMethods}>
+      {isSaveDraftOpen && onCloseSaveDraft && onSaveDraft ? (
+        <FormSaveDraftModal
+          isOpen={isSaveDraftOpen}
+          onClose={onCloseSaveDraft}
+          onSave={() => {
+            onSaveDraft(formMethods.getValues())
+          }}
+        />
+      ) : null}
       <form noValidate>
         {!!formFields?.length && (
           <Box bg="white" py="2.5rem" px={{ base: '1rem', md: '2.5rem' }}>
