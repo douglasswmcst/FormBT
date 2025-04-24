@@ -6,6 +6,7 @@ import { enSG as login } from './features/login'
 import { enSG as publicForm } from './features/public-form'
 import { enSG as workspace } from './features/workspace'
 import { enSG as formValidation } from './utils/form-validation'
+import { enSG as fieldValidation } from './utils/field-validation'
 import { FallbackTranslation } from './types'
 
 export const enSG: FallbackTranslation = {
@@ -21,6 +22,7 @@ export const enSG: FallbackTranslation = {
     },
     utils: {
       formValidation,
-    },
+      fieldValidation,
+    }
   },
 }

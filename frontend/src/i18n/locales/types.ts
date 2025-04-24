@@ -18,7 +18,7 @@ import {
   Workflow,
   Workspace,
 } from './features'
-import { FormValidation } from './utils'
+import { FieldValidation, FormValidation } from './utils'
 
 interface Translation {
   translation: {
@@ -45,6 +45,7 @@ interface Translation {
       workspace?: Workspace
     }
     utils: {
+      fieldValidation?: FieldValidation
       formValidation?: FormValidation
     }
   }
