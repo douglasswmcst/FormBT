@@ -8,9 +8,10 @@ export const FORM_AUTHTYPES: Record<
   string
 > = {
   [FormAuthType.NIL]: 'None',
-  [FormAuthType.SGID]: 'Singpass App-only Login',
-  [FormAuthType.SGID_MyInfo]: 'Singpass App-only with Myinfo',
-  [FormAuthType.SP]: 'Singpass',
-  [FormAuthType.MyInfo]: 'Singpass with Myinfo',
-  [FormAuthType.CP]: 'Singpass (Corporate)',
+  [FormAuthType.BNDI]: 'Bhutan NDI App-only Login',
+  // [FormAuthType.SGID]: 'Singpass App-only Login',
+  // [FormAuthType.SGID_MyInfo]: 'Singpass App-only with Myinfo',
+  // [FormAuthType.SP]: 'Singpass',
+  // [FormAuthType.MyInfo]: 'Singpass with Myinfo',
+  // [FormAuthType.CP]: 'Singpass (Corporate)',
 }

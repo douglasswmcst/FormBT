@@ -37,7 +37,9 @@ export const usePublicAuthMutations = (formId: string) => {
   const handleLoginMutation = useMutation(
     () => {
       const encodedQuery = storePrefillQuery()
-      return getPublicFormAuthRedirectUrl(formId, false, encodedQuery)
+      const resp = getPublicFormAuthRedirectUrl(formId, false, encodedQuery)
+      alert(resp)
+      return resp
     },
     {
       onSuccess: (redirectUrl) => {

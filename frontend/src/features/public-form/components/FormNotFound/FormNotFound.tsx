@@ -23,11 +23,11 @@ export const FormNotFound = ({ message }: FormNotFoundProps): JSX.Element => {
         py="3rem"
         px="1.5rem"
       >
-        <FormNotFoundSvgr
+        {/* <FormNotFoundSvgr
           maxW="100%"
           mb={{ base: '1.5rem', md: '3rem' }}
           maxH={{ base: '220px', md: 'initial' }}
-        />
+        /> */}
         <Stack
           spacing="1rem"
           color="secondary.500"
@@ -46,7 +46,7 @@ export const FormNotFound = ({ message }: FormNotFoundProps): JSX.Element => {
         flex={0}
         justify="center"
       >
-        <FormFooter />
+        {/* <FormFooter /> */}
       </Flex>
     </Flex>
   )

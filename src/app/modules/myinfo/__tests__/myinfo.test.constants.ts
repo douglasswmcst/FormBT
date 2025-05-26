@@ -118,7 +118,7 @@ export const MOCK_KEY_PATH =
 export const MOCK_CERT_PATH =
   './node_modules/@opengovsg/mockpass/static/certs/server.crt'
 export const MOCK_ESRVC_ID = 'mockEsrvcId'
-export const MOCK_UINFIN = 'S1234567A'
+export const MOCK_UINFIN = '12345678901'
 export const MOCK_REQUESTED_ATTRS = [MyInfoAttribute.Name]
 export const MOCK_FORM_ID = new ObjectId().toHexString()
 export const MOCK_NODE_ENV = Environment.Test

@@ -58,7 +58,7 @@ export const EmailFormSection = ({
           <FormLabel
             isRequired
             useMarkdownForDescription
-            description={`Add at least **2 recipients** to prevent loss of response. Learn more on [how to guard against email bounces](${GUIDE_PREVENT_EMAIL_BOUNCE}).`}
+            description={`Add at least **2 recipients** to prevent loss of response.`}
           >
             Emails where responses will be sent
           </FormLabel>

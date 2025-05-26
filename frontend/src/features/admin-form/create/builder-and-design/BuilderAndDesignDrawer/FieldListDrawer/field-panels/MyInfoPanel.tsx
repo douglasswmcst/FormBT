@@ -39,9 +39,9 @@ import { FieldSection } from './FieldSection'
 
 const SGID_SUPPORTED_V1 = [
   MyInfoAttribute.Name,
-  MyInfoAttribute.DateOfBirth,
-  MyInfoAttribute.PassportNumber,
-  MyInfoAttribute.PassportExpiryDate,
+  // MyInfoAttribute.DateOfBirth,
+  // MyInfoAttribute.PassportNumber,
+  // MyInfoAttribute.PassportExpiryDate,
   // This is disabled due to MyInfo and sgID-MyInfo not using the same
   // phone number formats.
   // MyInfo phone numbers support country code, while sgID-MyInfo does not.
@@ -50,25 +50,25 @@ const SGID_SUPPORTED_V1 = [
 const SGID_SUPPORTED_V2 = [
   ...SGID_SUPPORTED_V1,
   MyInfoAttribute.Sex,
-  MyInfoAttribute.Race,
-  MyInfoAttribute.Nationality,
-  MyInfoAttribute.HousingType,
-  MyInfoAttribute.HdbType,
-  MyInfoAttribute.RegisteredAddress,
-  MyInfoAttribute.BirthCountry,
-  MyInfoAttribute.VehicleNo,
-  MyInfoAttribute.Employment,
-  MyInfoAttribute.WorkpassStatus,
-  MyInfoAttribute.Marital,
-  MyInfoAttribute.MobileNo,
-  MyInfoAttribute.WorkpassExpiryDate,
-  MyInfoAttribute.ResidentialStatus,
-  MyInfoAttribute.Dialect,
-  MyInfoAttribute.Occupation,
-  MyInfoAttribute.CountryOfMarriage,
-  MyInfoAttribute.MarriageCertNo,
-  MyInfoAttribute.MarriageDate,
-  MyInfoAttribute.DivorceDate,
+  // MyInfoAttribute.Race,
+  // MyInfoAttribute.Nationality,
+  // MyInfoAttribute.HousingType,
+  // MyInfoAttribute.HdbType,
+  // MyInfoAttribute.RegisteredAddress,
+  // MyInfoAttribute.BirthCountry,
+  // MyInfoAttribute.VehicleNo,
+  // MyInfoAttribute.Employment,
+  // MyInfoAttribute.WorkpassStatus,
+  // MyInfoAttribute.Marital,
+  // MyInfoAttribute.MobileNo,
+  // MyInfoAttribute.WorkpassExpiryDate,
+  // MyInfoAttribute.ResidentialStatus,
+  // MyInfoAttribute.Dialect,
+  // MyInfoAttribute.Occupation,
+  // MyInfoAttribute.CountryOfMarriage,
+  // MyInfoAttribute.MarriageCertNo,
+  // MyInfoAttribute.MarriageDate,
+  // MyInfoAttribute.DivorceDate,
 ]
 
 export const MyInfoFieldPanel = () => {
@@ -120,7 +120,8 @@ export const MyInfoFieldPanel = () => {
       form
         ? form.form_fields.filter(isMyInfo).length >= 30 ||
           (form.authType !== FormAuthType.MyInfo &&
-            form.authType !== FormAuthType.SGID_MyInfo)
+            form.authType !== FormAuthType.SGID_MyInfo &&
+            form.authType !== FormAuthType.BNDI)
         : true,
     [form],
   )
@@ -135,7 +136,7 @@ export const MyInfoFieldPanel = () => {
   return (
     <>
       <MyInfoMessage />
-      <Droppable isDropDisabled droppableId={CREATE_MYINFO_PERSONAL_DROP_ID}>
+      {/* <Droppable isDropDisabled droppableId={CREATE_MYINFO_PERSONAL_DROP_ID}>
         {(provided) => (
           <Box ref={provided.innerRef} {...provided.droppableProps}>
             <FieldSection label="Personal">
@@ -151,7 +152,7 @@ export const MyInfoFieldPanel = () => {
             <Box display="none">{provided.placeholder}</Box>
           </Box>
         )}
-      </Droppable>
+      </Droppable> */}
       <Droppable isDropDisabled droppableId={CREATE_MYINFO_CONTACT_DROP_ID}>
         {(provided) => (
           <Box ref={provided.innerRef} {...provided.droppableProps}>
@@ -169,7 +170,7 @@ export const MyInfoFieldPanel = () => {
           </Box>
         )}
       </Droppable>
-      <Droppable isDropDisabled droppableId={CREATE_MYINFO_PARTICULARS_DROP_ID}>
+      {/* <Droppable isDropDisabled droppableId={CREATE_MYINFO_PARTICULARS_DROP_ID}>
         {(provided) => (
           <Box ref={provided.innerRef} {...provided.droppableProps}>
             <FieldSection label="Particulars">
@@ -204,7 +205,7 @@ export const MyInfoFieldPanel = () => {
             <Box display="none">{provided.placeholder}</Box>
           </Box>
         )}
-      </Droppable>
+      </Droppable> */}
       {user?.betaFlags?.children &&
       form?.responseMode === FormResponseMode.Email ? (
         <Droppable isDropDisabled droppableId={CREATE_MYINFO_CHILDREN_DROP_ID}>
@@ -243,6 +244,8 @@ const MyInfoText = ({
 }: MyInfoTextProps): JSX.Element => {
   const isMyInfoDisabled =
     authType !== FormAuthType.MyInfo && authType !== FormAuthType.SGID_MyInfo
+  // &&
+  // authType !== FormAuthType.BNDI
   const numMyInfoFields = useMemo(
     () => form_fields.filter((ff) => isMyInfo(ff)).length,
     [form_fields],
@@ -257,7 +260,7 @@ const MyInfoText = ({
   if (isMyInfoDisabled) {
     return (
       <Text>
-        Enable MyInfo in the{' '}
+        Enable NDI Verifiable Credentials in the{' '}
         <Link as={ReactLink} to={ADMINFORM_SETTINGS_SINGPASS_SUBROUTE}>
           Settings
         </Link>{' '}
@@ -268,7 +271,7 @@ const MyInfoText = ({
 
   return (
     <Text>
-      {`Only 30 MyInfo fields are allowed (${numMyInfoFields}/30). `}
+      {`Only 30 BNDI fields are allowed (${numMyInfoFields}/30). `}
       <Link isExternal href={GUIDE_EMAIL_MODE}>
         Learn more
       </Link>

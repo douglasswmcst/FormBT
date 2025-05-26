@@ -100,12 +100,17 @@ export const LandingPage = (): JSX.Element => {
         body="Respondents can now pay for fees and services directly on your form!"
         learnMoreLink={LANDING_PAYMENTS_ROUTE}
       /> */}
-      <FeatureBanner
+      {/* <FeatureBanner
         body="We have updated FormSG's Terms of Use and Privacy Policy"
         learnMoreLink={TOU_ROUTE}
-      />
+      /> */}
       <AppPublicHeader />
-      <LandingSection bg="primary.100" pt={{ base: '2rem', md: 0 }} px="0">
+      <LandingSection
+        bg="primary.100"
+        pt={{ base: '2rem', md: 0 }}
+        px="0"
+        h="calc(100vh)"
+      >
         <Stack
           direction={{ base: 'column', lg: 'row' }}
           align="center"
@@ -122,11 +127,12 @@ export const LandingPage = (): JSX.Element => {
               textStyle={{ base: 'display-1-mobile', md: 'display-1' }}
               color="secondary.700"
             >
-              Build secure government forms in minutes.
+              Effortlessly create secure forms in minutes.
             </Text>
             <SectionBodyText>
-              Instant, customisable forms with zero code or cost, to safely
-              collect classified and sensitive data.
+              Effortlessly create customizable forms instantly, at no cost and
+              without coding, ensuring secure collection of classified and
+              sensitive data.
             </SectionBodyText>
             <Box mt="2.5rem">
               <Button
@@ -135,16 +141,16 @@ export const LandingPage = (): JSX.Element => {
                 to={LOGIN_ROUTE}
                 rightIcon={<BiRightArrowAlt fontSize="1.5rem" />}
               >
-                Start building your form now
+                Build Now
               </Button>
             </Box>
           </Flex>
           <Flex flex={1} aria-hidden justify="right">
-            <LottieAnimation animationData={formsHeroAnimation} />
+            {/* <LottieAnimation animationData={formsHeroAnimation} /> */}
           </Flex>
         </Stack>
       </LandingSection>
-      <LandingSection>
+      {/* <LandingSection>
         <SectionTitleText maxW="37.5rem">
           Our form building and data collection features
         </SectionTitleText>
@@ -185,8 +191,8 @@ export const LandingPage = (): JSX.Element => {
             description="Send form responses to external applications in real time"
           />
         </SimpleGrid>
-      </LandingSection>
-      <LandingSection bg="primary.100">
+      </LandingSection> */}
+      {/* <LandingSection bg="primary.100">
         <Stack
           direction={{ base: 'column', lg: 'row' }}
           align="center"
@@ -214,8 +220,8 @@ export const LandingPage = (): JSX.Element => {
             />
           </Box>
         </Stack>
-      </LandingSection>
-      <LandingSection>
+      </LandingSection> */}
+      {/* <LandingSection>
         <SectionTitleText>Used by most government agencies</SectionTitleText>
         <Wrap shouldWrapChildren spacingX="3rem" mt="2.5rem" spacingY="2.5rem">
           <StatsItem stat={data?.formCount} description="forms launched" />
@@ -253,8 +259,8 @@ export const LandingPage = (): JSX.Element => {
             src={restrictedMsfLogo}
           />
         </Wrap>
-      </LandingSection>
-      <LandingSection bg="primary.100" align="center">
+      </LandingSection> */}
+      {/* <LandingSection bg="primary.100" align="center">
         <SectionTitleText>
           Supporting national and emergent use cases
         </SectionTitleText>
@@ -274,8 +280,8 @@ export const LandingPage = (): JSX.Element => {
           ))}
         </SimpleGrid>
         <Image src={meetingCollaborationImg} aria-hidden mt="5rem" />
-      </LandingSection>
-      <FeatureSection
+      </LandingSection> */}
+      {/* <FeatureSection
         direction={{ base: 'column', lg: 'row' }}
         title="Secure collection of responses"
         imgSrc={storageModeImg}
@@ -313,8 +319,8 @@ export const LandingPage = (): JSX.Element => {
         >
           Read more about Storage Mode
         </FeatureLink>
-      </FeatureSection>
-      <FeatureSection
+      </FeatureSection> */}
+      {/* <FeatureSection
         title="Open sourced"
         imgSrc={openSourceImg}
         direction={{ base: 'column', lg: 'row-reverse' }}
@@ -329,8 +335,8 @@ export const LandingPage = (): JSX.Element => {
         >
           Fork it on Github
         </FeatureLink>
-      </FeatureSection>
-      <FeatureSection
+      </FeatureSection> */}
+      {/* <FeatureSection
         title="Help Center"
         imgSrc={helpCenterImg}
         direction={{ base: 'column', lg: 'row' }}
@@ -417,8 +423,8 @@ export const LandingPage = (): JSX.Element => {
         >
           Visit our Help Center
         </FeatureLink>
-      </FeatureSection>
-      <FeatureSection
+      </FeatureSection> */}
+      {/* <FeatureSection
         align="start"
         direction={{ base: 'column', lg: 'row' }}
         bg="primary.100"
@@ -507,8 +513,8 @@ export const LandingPage = (): JSX.Element => {
             </TabPanel>
           </TabPanels>
         </Tabs>
-      </FeatureSection>
-      <FeatureSection
+      </FeatureSection> */}
+      {/* <FeatureSection
         title="All the government tools you need to manage your workflow"
         imgSrc={ogpSuiteImg}
         direction={{ base: 'column', lg: 'row' }}
@@ -526,8 +532,8 @@ export const LandingPage = (): JSX.Element => {
         >
           Full list of OGP products
         </FeatureLink>
-      </FeatureSection>
-      <LandingSection bg="secondary.700" align="center">
+      </FeatureSection> */}
+      {/* <LandingSection bg="secondary.700" align="center">
         <Image src={FormBrandLogo} aria-hidden h="3.5rem" />
         <Text
           textAlign="center"
@@ -542,8 +548,8 @@ export const LandingPage = (): JSX.Element => {
             Get started
           </Button>
         </Box>
-      </LandingSection>
-      <AppFooter />
+      </LandingSection> */}
+      {/* <AppFooter /> */}
     </>
   )
 }

@@ -7,10 +7,10 @@ import {
   useBreakpointValue,
 } from '@chakra-ui/react'
 
-import { ReactComponent as BrandHortSvg } from '~assets/svgs/brand/brand-hort-colour.svg'
-import { ReactComponent as BrandHortDarkSvg } from '~assets/svgs/brand/brand-hort-dark.svg'
-import { ReactComponent as BrandMarkSvg } from '~assets/svgs/brand/brand-mark-colour.svg'
-import { ReactComponent as BrandMarkDarkSvg } from '~assets/svgs/brand/brand-mark-dark.svg'
+import { ReactComponent as BrandHortSvg } from '~assets/svgs/brand/clipboard.svg'
+// import { ReactComponent as BrandHortDarkSvg } from '~assets/svgs/brand/clipboard.svg'
+// import { ReactComponent as BrandMarkSvg } from '~assets/svgs/brand/clipboard.svg'
+// import { ReactComponent as BrandMarkDarkSvg } from '~assets/svgs/brand/clipboard.svg'
 import { useIsMobile } from '~hooks/useIsMobile'
 import IconButton from '~components/IconButton'
 import Link from '~components/Link'
@@ -79,19 +79,20 @@ export const PublicHeader = ({
   ctaElement: ctaButton,
   bg,
 }: PublicHeaderProps): JSX.Element => {
-  const BrandHortLogo = bg ? chakra(BrandHortDarkSvg) : chakra(BrandHortSvg)
-  const BrandSmallLogo = bg ? chakra(BrandMarkDarkSvg) : chakra(BrandMarkSvg)
+  const BrandHortLogo = bg ? chakra(BrandHortSvg) : chakra(BrandHortSvg)
+  const BrandSmallLogo = bg ? chakra(BrandHortSvg) : chakra(BrandHortSvg)
 
   const logoToRender = useBreakpointValue({
-    base: <BrandSmallLogo w="2.5rem" />,
-    sm: <BrandHortLogo w="7.75rem" />,
+    base: <BrandSmallLogo w="4rem" h="4.5rem" />,
+    sm: <BrandHortLogo w="4rem" h="4.5rem" />,
   })
 
   return (
     <PublicHeader.Container bg={bg}>
-      <Link title="Form Logo" href="https://form.gov.sg/">
+      <Link title="Form Logo" href="">
         {logoToRender}
       </Link>
+      {/* <Image></Image> */}
       <HStack
         textStyle="subhead-1"
         spacing={{ base: '1rem', md: '2rem', xl: '2.5rem' }}

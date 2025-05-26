@@ -122,6 +122,18 @@ export const handleGetPublicForm: ControllerHandler<
   switch (authType) {
     case FormAuthType.NIL:
       return res.json({ form: publicForm, isIntranetUser })
+    case FormAuthType.BNDI:
+      return res.json({ form: publicForm, isIntranetUser })
+    // return res.json({
+    //   form: publicForm,
+    //   isIntranetUser,
+    //   spcpSession: {
+    //     exp: 1710090590,
+    //     iat: 1710049790,
+    //     rememberMe: false,
+    //     userName: '1234',
+    //   },
+    // })
     case FormAuthType.SP:
       return getOidcService(FormAuthType.SP)
         .extractJwtPayloadFromRequest(req.cookies)

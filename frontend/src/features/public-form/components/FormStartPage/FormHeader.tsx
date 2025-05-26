@@ -128,6 +128,7 @@ export const FormHeader = ({
   handleLogout,
 }: FormHeaderProps): JSX.Element | null => {
   const { isOpen, onOpen, onClose } = useDisclosure()
+  // console.log(loggedInId)
 
   const handlePositionChange = useCallback(
     (pos: Waypoint.CallbackArgs) => {

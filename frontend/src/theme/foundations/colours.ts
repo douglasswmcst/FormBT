@@ -36,15 +36,15 @@ export type FieldColorScheme = Extract<
 >
 
 const primaryColourPalette = {
-  100: '#F6F7FC',
-  200: '#E4E7F6',
-  300: '#B7C0E6',
-  400: '#8998D6',
-  500: '#4A61C0',
-  600: '#3B4E9A',
-  700: '#2C3A73',
-  800: '#1E274D',
-  900: '#161D3A',
+  100: '#ffddb0',
+  200: '#ffc77d',
+  300: '#ffaf49',
+  400: '#ff9e22',
+  500: '#fe8d00',
+  600: '#fa8100',
+  700: '#f47101',
+  800: '#ee6002',
+  900: '#e44304',
 }
 
 export const colours: { [k in ThemeColorScheme]: Record<string, string> } = {

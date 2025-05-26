@@ -4,6 +4,7 @@ export enum VerifiedFor {
   Singaporeans = 'singaporeans',
   PermanentResidents = 'pr',
   ForeignersWithSingpass = 'singpassforeigners',
+  Bhutanese = 'bhutanese',
 }
 
 export enum MyInfoDataSource {

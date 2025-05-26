@@ -11,14 +11,14 @@ export const EmptyResponses = (): JSX.Element => {
       <Text as="h2" textStyle="h2" color="primary.500" mb="1rem">
         You don't have any responses yet.
       </Text>
-      <Text textStyle="body-1" color="secondary.500">
+      {/* <Text textStyle="body-1" color="secondary.500">
         Try using{' '}
         <Link isExternal href={OGP_POSTMAN}>
           Postman.gov.sg
         </Link>{' '}
         to send out your form links!
       </Text>
-      <EmptyResponsesSvgr mt="1.5rem" w="280px" maxW="100%" />
+      <EmptyResponsesSvgr mt="1.5rem" w="280px" maxW="100%" /> */}
     </Flex>
   )
 }

@@ -77,8 +77,8 @@ export const EditMyInfoChildren = ({
          *  This allows the object to be created with arbitrary ordered keys.
          */}
         <HStack>
-          <VerifiedIcon isVerified={extendedField.verifiedFor.singaporeans} />
-          <Text>Singaporeans</Text>
+          <VerifiedIcon isVerified={extendedField.verifiedFor.bhutanese} />
+          <Text>Bhutanese</Text>
         </HStack>
         <HStack>
           <VerifiedIcon isVerified={extendedField.verifiedFor.pr} />
@@ -90,8 +90,8 @@ export const EditMyInfoChildren = ({
           />
           <Text>
             Foreigners with{' '}
-            <Link isExternal href={SINGPASS_FAQ}>
-              Singpass
+            <Link isExternal href="">
+              Bhutan NDI
             </Link>
           </Text>
         </HStack>

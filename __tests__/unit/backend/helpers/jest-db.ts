@@ -312,7 +312,7 @@ const insertFormFeedback = async ({
   formId,
   submissionId,
   rating = '5',
-  comment = 'FormSG rocks!',
+  comment = 'FormBT rocks!',
 }: {
   formId?: Schema.Types.ObjectId
   submissionId?: Schema.Types.ObjectId

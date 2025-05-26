@@ -13,10 +13,10 @@ import {
   trackAdminLoginFailure,
 } from '~features/analytics/AnalyticsService'
 
+import { BtNdiLoginButton } from './components/BtNdiLoginButton'
 import { LoginForm, LoginFormInputs } from './components/LoginForm'
 import { OrDivider } from './components/OrDivider'
 import { OtpForm, OtpFormInputs } from './components/OtpForm'
-import { SgidLoginButton } from './components/SgidLoginButton'
 import { LoginPageTemplate } from './LoginPageTemplate'
 import { useIsIntranetCheck } from './queries'
 
@@ -92,13 +92,12 @@ export const LoginPage = (): JSX.Element => {
       {!email ? (
         <Stack spacing="2rem">
           <LoginForm onSubmit={handleSendOtp} />
-          {/* Only show sgID login button if user is not on intranet */}
-          {!isIntranetIp && (
+          {/* {!isIntranetIp && (
             <>
               <OrDivider />
-              <SgidLoginButton />
+              <BtNdiLoginButton />
             </>
-          )}
+          )} */}
         </Stack>
       ) : (
         <OtpForm

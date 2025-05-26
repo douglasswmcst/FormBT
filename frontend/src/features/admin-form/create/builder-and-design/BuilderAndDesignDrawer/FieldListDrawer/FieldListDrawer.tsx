@@ -46,19 +46,19 @@ export const FieldListDrawer = (): JSX.Element => {
       key: FieldListTabIndex.Basic,
     },
     {
-      header: 'MyInfo',
+      header: 'NDI VC',
       component: MyInfoFieldPanel,
       isHidden: false,
       isDisabled: isLoading,
       key: FieldListTabIndex.MyInfo,
     },
-    {
-      header: 'Payments',
-      component: PaymentsInputPanel,
-      isHidden: !displayPayments,
-      isDisabled: isLoading,
-      key: FieldListTabIndex.Payments,
-    },
+    // {
+    //   header: 'Payments',
+    //   component: PaymentsInputPanel,
+    //   isHidden: !displayPayments,
+    //   isDisabled: isLoading,
+    //   key: FieldListTabIndex.Payments,
+    // },
   ].filter((tab) => !tab.isHidden)
 
   return (

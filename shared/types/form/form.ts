@@ -58,6 +58,7 @@ export enum FormAuthType {
   MyInfo = 'MyInfo',
   SGID = 'SGID',
   SGID_MyInfo = 'SGID_MyInfo',
+  BNDI = 'BNDI',
 }
 
 export enum FormStatus {

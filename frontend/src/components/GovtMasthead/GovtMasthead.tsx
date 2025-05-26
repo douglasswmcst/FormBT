@@ -130,7 +130,7 @@ export const GovtMasthead = ({
 
   return (
     <Box>
-      <HeaderBar
+      {/* <HeaderBar
         onToggle={onToggle}
         isMobile={isMobile}
         isOpen={isOpen}
@@ -156,7 +156,7 @@ export const GovtMasthead = ({
             />
           </HowToIdentify>
         </Flex>
-      </HeaderBar>
+      </HeaderBar> */}
 
       <Collapse in={isOpen} animateOpacity>
         <Stack

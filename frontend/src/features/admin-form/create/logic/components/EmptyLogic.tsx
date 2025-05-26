@@ -30,9 +30,9 @@ export const EmptyLogic = (): JSX.Element => {
       <Text textStyle="body-1" mt="1rem">
         Show or hide fields depending on user input, or disable form submission
         for invalid answers.{' '}
-        <Link isExternal href={GUIDE_FORM_LOGIC}>
+        {/* <Link isExternal href={GUIDE_FORM_LOGIC}>
           Learn to work with logic
-        </Link>
+        </Link> */}
       </Text>
       <Button
         my="2.5rem"
@@ -41,7 +41,7 @@ export const EmptyLogic = (): JSX.Element => {
       >
         Add logic
       </Button>
-      <LogicSvgr maxW="292px" />
+      {/* <LogicSvgr maxW="292px" /> */}
       <Divider my="2.5rem" />
       <Stack spacing="1.5rem" textAlign="center" maxW="28rem">
         <Text textStyle="subhead-3">Allowed fields</Text>

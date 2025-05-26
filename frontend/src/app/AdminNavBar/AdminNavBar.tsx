@@ -15,7 +15,7 @@ import {
 
 import { BxsHelpCircle } from '~assets/icons/BxsHelpCircle'
 import { BxsRocket } from '~assets/icons/BxsRocket'
-import { ReactComponent as BrandMarkSvg } from '~assets/svgs/brand/brand-mark-colour.svg'
+import { ReactComponent as BrandMarkSvg } from '~assets/svgs/brand/clipboard.svg'
 import { FEATURE_REQUEST, FORM_GUIDE } from '~constants/links'
 import {
   EMERGENCY_CONTACT_KEY_PREFIX,
@@ -50,16 +50,16 @@ type AdminNavBarLinkProps = {
 }
 
 const NAV_LINKS: AdminNavBarLinkProps[] = [
-  {
-    label: 'Feature request',
-    href: FEATURE_REQUEST,
-    MobileIcon: BiCommentDetail,
-  },
-  {
-    label: 'Help',
-    href: FORM_GUIDE,
-    MobileIcon: BxsHelpCircle,
-  },
+  // {
+  //   label: 'Feature request',
+  //   href: FEATURE_REQUEST,
+  //   MobileIcon: BiCommentDetail,
+  // },
+  // {
+  //   label: 'Help',
+  //   href: FORM_GUIDE,
+  //   MobileIcon: BxsHelpCircle,
+  // },
 ]
 
 const WHATS_NEW_LABEL = "What's new"
@@ -107,12 +107,6 @@ const WhatsNewNavBarTab = ({
   if (isMobile) {
     return (
       <Box position="relative">
-        <IconButton
-          variant="clear"
-          aria-label={WHATS_NEW_LABEL}
-          icon={<BxsRocket fontSize="1.25rem" color="primary.500" />}
-          onClick={onClick}
-        />
         {shouldShowNotiifcation && (
           <Icon
             as={GoPrimitiveDot}
@@ -127,16 +121,6 @@ const WhatsNewNavBarTab = ({
 
   return (
     <Box position="relative">
-      <Button
-        w="fit-content"
-        variant="link"
-        color="secondary.500"
-        onClick={onClick}
-        aria-label={WHATS_NEW_LABEL}
-        fontWeight="500"
-      >
-        {WHATS_NEW_LABEL}
-      </Button>
       {shouldShowNotiifcation && (
         <Icon
           as={GoPrimitiveDot}
@@ -246,7 +230,7 @@ export const AdminNavBar = ({ isMenuOpen }: AdminNavBarProps): JSX.Element => {
     <>
       <AdminNavBar.Container>
         <ReactLink title="Form Logo" to={DASHBOARD_ROUTE}>
-          {<BrandSmallLogo w="2rem" />}
+          {<BrandSmallLogo w="2.5rem" h="2.5rem" />}
         </ReactLink>
         <HStack
           textStyle="subhead-1"
@@ -255,19 +239,19 @@ export const AdminNavBar = ({ isMenuOpen }: AdminNavBarProps): JSX.Element => {
           {NAV_LINKS.map((link, index) => (
             <AdminNavBarLink key={index} {...link} />
           ))}
-          <WhatsNewNavBarTab
+          {/* <WhatsNewNavBarTab
             onClick={onWhatsNewDrawerOpen}
             shouldShowNotiifcation={shouldShowFeatureUpdateNotification}
-          />
+          /> */}
           <AvatarMenu
             name={user?.email}
             menuUsername={user?.email}
             defaultIsOpen={isMenuOpen}
             menuListProps={{ maxWidth: '19rem' }}
           >
-            <Menu.Item as={ReactLink} to="/billing">
+            {/* <Menu.Item as={ReactLink} to="/billing">
               Billing
-            </Menu.Item>
+            </Menu.Item> */}
             <Menu.Item onClick={onContactModalOpen}>
               Emergency contact
             </Menu.Item>
@@ -283,10 +267,10 @@ export const AdminNavBar = ({ isMenuOpen }: AdminNavBarProps): JSX.Element => {
         isOpen={whatsNewFeatureDrawerDisclosure.isOpen}
         onClose={whatsNewFeatureDrawerDisclosure.onClose}
       />
-      <EmergencyContactModal
+      {/* <EmergencyContactModal
         onClose={onContactModalClose}
         isOpen={isContactModalOpen}
-      />
+      /> */}
       <TransferOwnershipModal
         onClose={onTransferOwnershipModalClose}
         isOpen={isTransferOwnershipModalOpen}

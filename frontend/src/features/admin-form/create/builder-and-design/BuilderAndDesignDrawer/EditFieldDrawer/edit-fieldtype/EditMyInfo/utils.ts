@@ -16,6 +16,7 @@ const MYINFO_VERIFICATION_TYPE_MAPPINGS: {
   F: VerifiedFor.ForeignersWithSingpass,
   PR: VerifiedFor.PermanentResidents,
   SG: VerifiedFor.Singaporeans,
+  BT: VerifiedFor.Bhutanese,
 }
 
 type VerifiedForMappings = {

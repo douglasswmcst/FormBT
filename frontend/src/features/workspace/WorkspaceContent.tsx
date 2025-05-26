@@ -65,7 +65,7 @@ export const WorkspaceContent = (): JSX.Element => {
             px={{ base: '2rem', md: '4rem' }}
             py="1rem"
           >
-            {isDefaultWorkspace && (
+            {/* {isDefaultWorkspace && (
               <InlineMessage
                 useMarkdown
                 mb="2rem"
@@ -74,7 +74,7 @@ export const WorkspaceContent = (): JSX.Element => {
               >
                 {dashboardMessage}
               </InlineMessage>
-            )}
+            )} */}
             <WorkspaceHeader
               handleOpenCreateFormModal={createFormModalDisclosure.onOpen}
             />
@@ -83,10 +83,10 @@ export const WorkspaceContent = (): JSX.Element => {
             <EmptyNewWorkspace isLoading={isLoading} />
           ) : (
             <Box gridArea="main">
-              <RolloutAnnouncementModal
+              {/* <RolloutAnnouncementModal
                 onClose={() => setHasSeenAnnouncement(true)}
                 isOpen={isAnnouncementModalOpen}
-              />
+              /> */}
               <WorkspaceFormRows />
             </Box>
           )}

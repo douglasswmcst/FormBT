@@ -29,7 +29,7 @@ export const FormFooter = (): JSX.Element => {
           mb={{ lg: '2rem' }}
         >
           <Box id={captchaContainerId} sx={noPrintCss} mt="2rem" />
-          <Box w="100%">
+          {/* <Box w="100%">
             <AppFooter
               variant="compact"
               containerProps={{
@@ -38,7 +38,7 @@ export const FormFooter = (): JSX.Element => {
                 pb: { base: '3rem', md: '4rem', lg: 0 },
               }}
             />
-          </Box>
+          </Box> */}
         </Stack>
       </Box>
     </Flex>

@@ -76,7 +76,7 @@ export const extractOtp = async (recipient: string): Promise<string> => {
 }
 
 /**
- * Retrieves an email sent by FormSG.
+ * Retrieves an email sent by FormBT.
  * @param {string} formName title of form
  * @param {string} responseId response ID of the submission
  * @returns {object} subject, sender, recipient and html content of email
@@ -85,7 +85,7 @@ export const getSubmission = async (
   formName: string,
   responseId: string,
 ): Promise<EmailSubmission> => {
-  const subject = `formsg-auto: ${formName} (#${responseId})`
+  const subject = `formbt-auto: ${formName} (#${responseId})`
 
   const emails = await getEmailsBy((e) => e.subject === subject)
 
@@ -123,7 +123,7 @@ const getSubmissionAttachments = async (
 }
 
 /**
- * Retrieves an autoreply email sent by FormSG.
+ * Retrieves an autoreply email sent by FormBT.
  * @param {string} responseId response ID of the submission
  * @param {string} recipient email address of the form filler
  * @returns {MailData} email for the autoreply sent to the recipient

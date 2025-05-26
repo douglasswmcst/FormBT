@@ -114,7 +114,7 @@ export const SettingsPage = (): JSX.Element => {
             mb="calc(0.5rem - 2px)"
           >
             <SettingsTab label="General" icon={BiCog} />
-            <SettingsTab label="Singpass" icon={BiKey} />
+            <SettingsTab label="Bhutan NDI" icon={BiKey} />
             <SettingsTab label="Twilio credentials" icon={BiMessage} />
             <SettingsTab label="Webhooks" icon={BiCodeBlock} />
             {displayPayments && (

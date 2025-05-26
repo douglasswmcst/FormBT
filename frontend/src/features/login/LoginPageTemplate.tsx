@@ -116,15 +116,15 @@ export const LoginPageTemplate: FC = ({ children }) => {
           {bannerProps.msg}
         </Banner>
       ) : null}
-      <FeatureBanner
+      {/* <FeatureBanner
         bannerColorIntensity={bannerColorIntensity}
         body="You can now collect payments directly on your form!"
         learnMoreLink={LANDING_PAYMENTS_ROUTE}
-      />
+      /> */}
       <BaseGridLayout flex={1}>
-        <NonMobileSidebarGridArea>
+        {/* <NonMobileSidebarGridArea>
           <LoginImageSvgr maxW="100%" aria-hidden />
-        </NonMobileSidebarGridArea>
+        </NonMobileSidebarGridArea> */}
         <LoginGridArea>
           <Box minH={{ base: 'auto', lg: '17.25rem' }} w="100%">
             <Flex mb={{ base: '2.5rem', lg: 0 }} flexDir="column">
@@ -142,7 +142,7 @@ export const LoginPageTemplate: FC = ({ children }) => {
                   to={LANDING_ROUTE}
                   mb={{ base: '0.75rem', lg: '1.5rem' }}
                 >
-                  <BrandLogo title="FormSG logo" />
+                  {/* <BrandLogo title="FormSG logo" /> */}
                 </Link>
                 <Text textStyle="h4" color="secondary.500">
                   {t('features.login.LoginPage.slogan')}
@@ -153,7 +153,7 @@ export const LoginPageTemplate: FC = ({ children }) => {
           </Box>
         </LoginGridArea>
       </BaseGridLayout>
-      <BaseGridLayout bg={{ base: 'primary.100', lg: 'transparent' }}>
+      {/* <BaseGridLayout bg={{ base: 'primary.100', lg: 'transparent' }}>
         <FooterGridArea>
           <AppFooter
             compactMonochromeLogos
@@ -164,7 +164,7 @@ export const LoginPageTemplate: FC = ({ children }) => {
             }}
           />
         </FooterGridArea>
-      </BaseGridLayout>
+      </BaseGridLayout> */}
     </BackgroundBox>
   )
 }

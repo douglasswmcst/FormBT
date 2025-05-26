@@ -58,11 +58,11 @@ export const EmptyWorkspace = ({
           Create form
         </Button>
       )}
-      <EmptyWorkspaceSvgr
+      {/* <EmptyWorkspaceSvgr
         mt={{ base: '2.5rem', md: '3.5rem' }}
         w={{ base: '184px', md: '354px' }}
         maxW="100%"
-      />
+      /> */}
     </Flex>
   )
 }

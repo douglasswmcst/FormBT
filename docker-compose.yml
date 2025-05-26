@@ -18,7 +18,7 @@ services:
     environment:
       - NODE_ENV=development
       - DB_HOST=mongodb://database:27017/formsg?directConnection=true
-      - APP_NAME=FormSG
+      - APP_NAME=FormBT
       - APP_URL=http://localhost:5001
       - FE_APP_URL=http://localhost:3000
       - ATTACHMENT_S3_BUCKET=local-attachment-bucket
@@ -30,8 +30,8 @@ services:
       - VIRUS_SCANNER_CLEAN_S3_BUCKET=local-virus-scanner-clean-bucket
       - FORMSG_SDK_MODE=development
       - BOUNCE_LIFE_SPAN=86400000
-      - AWS_ACCESS_KEY_ID=fakeKey
-      - AWS_SECRET_ACCESS_KEY=fakeSecret
+      - AWS_ACCESS_KEY_ID=
+      - AWS_SECRET_ACCESS_KEY=
       - SESSION_SECRET=thisisasecret
       - AWS_ENDPOINT=http://localhost:4566
       - SECRET_ENV=development

@@ -226,13 +226,13 @@ export const optionalVarsSchema: Schema<IOptionalVarsSchema> = {
     from: {
       doc: 'Sender email address',
       format: 'email',
-      default: 'donotreply@mail.form.gov.sg',
+      default: 'donotreply@mail.form.gov.bt',
       env: 'MAIL_FROM',
     },
     official: {
       doc: 'Official email address to reply to',
       format: 'email',
-      default: 'form@open.gov.sg',
+      default: 'form@tech.gov.bt',
       env: 'MAIL_OFFICIAL',
     },
     logger: {

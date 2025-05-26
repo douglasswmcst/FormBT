@@ -676,7 +676,7 @@ export const PublicFormProvider = ({
   if (isNotFormId) {
     return <NotFoundErrorPage />
   }
-
+  console.log('data', data)
   return (
     <PublicFormContext.Provider
       value={{

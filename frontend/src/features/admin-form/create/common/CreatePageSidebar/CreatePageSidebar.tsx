@@ -127,7 +127,7 @@ export const CreatePageSidebar = (): JSX.Element | null => {
           </>
         )}
       </Stack>
-      <Tooltip label="Help" placement="right">
+      {/* <Tooltip label="Help" placement="right">
         <IconButton
           variant="solid"
           colorScheme="subtle"
@@ -140,7 +140,7 @@ export const CreatePageSidebar = (): JSX.Element | null => {
             window.open(FORM_GUIDE)
           }}
         />
-      </Tooltip>
+      </Tooltip> */}
     </Stack>
   )
 }

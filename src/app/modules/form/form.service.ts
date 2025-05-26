@@ -307,6 +307,7 @@ export const checkIsIntranetFormAccess = (
       FormAuthType.CP,
       FormAuthType.MyInfo,
       FormAuthType.SGID,
+      FormAuthType.BNDI,
       FormAuthType.SGID_MyInfo,
     ].includes(form.authType)
   ) {

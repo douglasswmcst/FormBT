@@ -4,6 +4,7 @@ import { rateLimitConfig } from '../../../../config/config'
 import * as AuthController from '../../../../modules/auth/auth.controller'
 import { limitRate } from '../../../../utils/limit-rate'
 
+import { AuthBTNDIRouter } from './auth-btndi.routes'
 import { AuthSGIDRouter } from './auth-sgid.routes'
 
 export const AuthRouter = Router()
@@ -66,3 +67,4 @@ AuthRouter.post(
 AuthRouter.get('/logout', AuthController.handleSignout)
 
 AuthRouter.use('/sgid', AuthSGIDRouter)
+AuthRouter.use('/btndi', AuthBTNDIRouter)

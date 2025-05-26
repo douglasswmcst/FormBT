@@ -18,7 +18,7 @@ const PUBLIC_HEADER_LINKS = [
 export const AppPublicHeader = ({ bg }: { bg?: string }): JSX.Element => {
   return (
     <PublicHeader
-      publicHeaderLinks={PUBLIC_HEADER_LINKS}
+      // publicHeaderLinks={PUBLIC_HEADER_LINKS}
       ctaElement={
         <Button
           variant={bg ? 'inverseOutline' : 'solid'}

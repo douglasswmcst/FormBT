@@ -63,7 +63,8 @@ export const handleLogin: ControllerHandler<
 
   if (
     form.authType !== FormAuthType.SGID &&
-    form.authType !== FormAuthType.SGID_MyInfo
+    form.authType !== FormAuthType.SGID_MyInfo &&
+    form.authType !== FormAuthType.BNDI
   ) {
     logger.error({
       message: "Log in attempt to wrong endpoint for form's authType",

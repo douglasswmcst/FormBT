@@ -1,9 +1,13 @@
+/* eslint-disable no-console */
 import compression from 'compression'
 import express, { Express } from 'express'
 import addRequestId from 'express-request-id'
 import http from 'http'
 import { Connection } from 'mongoose'
+import { connect, nkeyAuthenticator } from 'nats'
 import path from 'path'
+// import WebSocket from 'ws'
+// import { Server } from 'socket.io'
 import url from 'url'
 
 import config from '../../config/config'
@@ -30,6 +34,26 @@ import sessionMiddlewares from './session'
 const loadExpressApp = async (connection: Connection) => {
   // Initialize express app.
   let app = express()
+
+  // NATS SERVER
+  // seed should be stored and treated like a secret
+  const seed = new TextEncoder().encode(
+    'SUAPXY7TJFUFE3IX3OEMSLE3JFZJ3FZZRSRSOGSG2ANDIFN77O2MIBHWUM',
+  )
+  const nc = await connect({
+    servers: ['nats://13.229.203.54:4222'],
+    // port: 4222,
+    authenticator: nkeyAuthenticator(seed),
+  })
+
+  console.log('@@@@@', nc)
+  console.log(`connected to ${nc.getServer()}`)
+
+  // io.on('connection', (socket) => {
+  //   console.log('SOCKETS CONNECTED')
+  //   socket.emit('news', { hello: 'world' })
+  // })
+
   app.locals = appLocals
 
   const getConfigFunctionFor = (environment: string) => {
@@ -140,6 +164,26 @@ const loadExpressApp = async (connection: Connection) => {
   app.use(errorHandlerMiddlewares())
 
   const server = http.createServer(app)
+  // eslint-disable-next-line @typescript-eslint/no-var-requires
+  // const io = require('socket.io')(server)
+  // io.set('origins', '*:*')
+  // io.origins([
+  //   'http://localhost:3000',
+  //   // 'https://entermeme.com:80',  // <--- With port (or 443 for SSL)
+  // ])
+  // io.on('connection', (socket) => {
+  //   socket.emit('connect', { message: 'a new client connected' })
+  // })
+  // const websocketServer = new WebSocket.Server({
+  //   noServer: true,
+  //   path: '/ws',
+  // })
+
+  // server.on('upgrade', (request, socket, head) => {
+  //   websocketServer.handleUpgrade(request, socket, head, (websocket) => {
+  //     websocketServer.emit('connection', websocket, request)
+  //   })
+  // })
 
   return server
 }

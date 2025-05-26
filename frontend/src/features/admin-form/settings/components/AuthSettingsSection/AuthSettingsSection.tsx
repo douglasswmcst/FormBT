@@ -126,8 +126,8 @@ export const AuthSettingsSection = ({
         marginBottom="40px"
         marginTop="40px"
       >
-        Authenticate respondents by NRIC.{' '}
-        <Link
+        Authenticate respondents by Bhutan NDI Verifiable Credentials{'(VC).'}
+        {/* <Link
           textStyle="subhead-1"
           href={GUIDE_SPCP_ESRVCID}
           isExternal
@@ -135,7 +135,7 @@ export const AuthSettingsSection = ({
           onClickCapture={(e) => e.stopPropagation()}
         >
           Learn more about Singpass authentication
-        </Link>
+        </Link> */}
       </Text>
       {isFormPublic ? (
         <InlineMessage marginBottom="16px">

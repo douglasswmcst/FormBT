@@ -21,7 +21,7 @@ export * from './myinfo-races'
 export * from './myinfo-hdb-types'
 export * from './myinfo-housing-types'
 
-export type MyInfoVerifiedType = 'SG' | 'PR' | 'F'
+export type MyInfoVerifiedType = 'SG' | 'PR' | 'F' | 'BT'
 
 export type MyInfoFieldBlock = {
   name: MyInfoAttribute
@@ -191,7 +191,7 @@ export const types: MyInfoFieldBlock[] = [
     name: MyInfoAttribute.CountryOfMarriage,
     value: 'Country of marriage',
     category: 'family',
-    verified: [],
+    verified: ['BT'],
     source: 'Ministry of Social and Family Development',
     description:
       'The country of marriage of the form-filler. This field is treated as unverified, as data provided by MSF may be outdated in cases of marriages in a foreign country.',
@@ -203,11 +203,11 @@ export const types: MyInfoFieldBlock[] = [
     name: MyInfoAttribute.RegisteredAddress,
     value: 'Registered address',
     category: 'contact',
-    verified: ['SG', 'PR'],
-    source: 'Immigration & Checkpoints Authority',
+    verified: ['BT'],
+    source: 'Department of Civil Registration & Census',
     description: 'The registered address of the form-filler.',
     fieldType: BasicField.ShortText,
-    previewValue: '411 CHUA CHU KANG AVE 3, #12-3, SINGAPORE 238823',
+    previewValue: 'Norzin Lam 1, Thimphu, Bhutan',
   },
   {
     name: MyInfoAttribute.Occupation,
